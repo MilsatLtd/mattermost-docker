@@ -23,8 +23,6 @@ services:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
-    networks:
-      - mynetwork
 
   mattermost:
     depends_on:
@@ -67,17 +65,7 @@ services:
       # Nginx and lets encrypt
       - VIRTUAL_HOST
       - LETSENCRYPT_HOST
-    networks:
-      # gotten from here https://github.com/MilsatLtd/Builds/blob/4c0dafea5997dbd7c8d4f4816e64a8a8eb668f31/docker-compose.yml#L20
-      - net
-      - mynetwork
 
-networks:
-  mynetwork:
-    internal: true
-  net:
-    name: nginxNetwork
-    external: true
 # If you use rolling image tags and feel lucky watchtower can automatically pull new images and
 # instantiate containers from it. https://containrrr.dev/watchtower/
 # Please keep in mind watchtower will have access on the docker socket. This can be a security risk.
