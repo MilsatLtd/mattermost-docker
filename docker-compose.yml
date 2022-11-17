@@ -59,6 +59,10 @@ services:
 
       # additional settings
       - MM_SERVICESETTINGS_SITEURL
+      
+      # Nginx and lets encrypt
+      - VIRTUAL_HOST
+      - LETSENCRYPT_HOST
 
 # If you use rolling image tags and feel lucky watchtower can automatically pull new images and
 # instantiate containers from it. https://containrrr.dev/watchtower/
