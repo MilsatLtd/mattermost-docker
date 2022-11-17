@@ -32,7 +32,7 @@ services:
     image: mattermost/${MATTERMOST_IMAGE}:${MATTERMOST_IMAGE_TAG}
     restart: ${RESTART_POLICY}
     ports:
-      - 10005:80
+      - 8065:80
     security_opt:
       - no-new-privileges:true
     pids_limit: 200
