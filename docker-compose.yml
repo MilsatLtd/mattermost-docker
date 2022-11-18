@@ -29,8 +29,6 @@ services:
       - postgres
     image: mattermost/${MATTERMOST_IMAGE}:${MATTERMOST_IMAGE_TAG}
     restart: ${RESTART_POLICY}
-    ports:
-      - 8065:8065
     security_opt:
       - no-new-privileges:true
     pids_limit: 200
@@ -62,9 +60,6 @@ services:
       # additional settings
       - MM_SERVICESETTINGS_SITEURL
       
-      # Nginx and lets encrypt
-      - VIRTUAL_HOST
-      - LETSENCRYPT_HOST
 
 # If you use rolling image tags and feel lucky watchtower can automatically pull new images and
 # instantiate containers from it. https://containrrr.dev/watchtower/
