@@ -59,7 +59,7 @@ services:
 
       # additional settings
       - MM_SERVICESETTINGS_SITEURL
-    network:
+    networks:
       - net
       
 networks:
