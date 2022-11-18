@@ -24,6 +24,9 @@ services:
       - POSTGRES_PASSWORD
       - POSTGRES_DB
 
+    networks:
+      - mynetwork
+
   mattermost:
     depends_on:
       - postgres
@@ -66,9 +69,12 @@ services:
       
     networks:
       - net
-      
+      - mynetwork
+
 networks:
-  net:    
+  mynetwork:
+    internal: true
+  net:
     name: nginxNetwork
     external: true
 
