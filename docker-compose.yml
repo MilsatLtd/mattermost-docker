@@ -59,6 +59,11 @@ services:
 
       # additional settings
       - MM_SERVICESETTINGS_SITEURL
+      
+      # Nginx and lets encrypt
+      - VIRTUAL_HOST
+      - LETSENCRYPT_HOST
+      
     networks:
       - net
       
